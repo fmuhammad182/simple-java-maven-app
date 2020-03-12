@@ -11,4 +11,4 @@ COPY --from=build-image $PROJECT_HOME/
 
 WORKDIR $PROJECT_HOME
 
-CMD ["java", "-Dspring.data.mongodb.uri=mongodb://mongo:27017/spring-mongo","-Djava.security.egd=file:/dev/./urandom","-jar",
+#CMD ["java", "-Dspring.data.mongodb.uri=mongodb://mongo:27017/spring-mongo","-Djava.security.egd=file:/dev/./urandom","-jar",
