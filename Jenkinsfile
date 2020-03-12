@@ -8,11 +8,8 @@ node{
          steps{
               sh "mvn clean package"
               sh "mv target/*.war ."
-      
-    } 
-     
-   
-    
+         }
+    }   
 }
     
     
