@@ -19,3 +19,6 @@ made one more changes
 I am creatin aurto
 
 one more changes
+
+
+Addedd auto trigger
