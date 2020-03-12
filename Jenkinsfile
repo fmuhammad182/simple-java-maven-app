@@ -10,6 +10,10 @@ node{
       sh "${mavenCMD} clean package"
       
     } 
+     
+     stage('Build Docker Image'){
+        sh 'docker build -t fmuhammad182/simple-java-maven-app .'
+    }
     
     
 }
