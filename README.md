@@ -22,3 +22,5 @@ one more changes
 
 
 Addedd auto trigger
+
+now test
