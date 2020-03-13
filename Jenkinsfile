@@ -10,4 +10,7 @@ node{
       sh "${mavenCMD} clean package"
       
     } 
+     stage('Build Docker Image'){
+        sh 'docker build -t fmuhammad1824/simple-java .'
+    }
 }
