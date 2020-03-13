@@ -17,7 +17,7 @@ node{
     
     stage('Publish'){
         withDockerRegistry([ credentialsId: 'DOCKER_CRED', url:'https://registry.hub.docker.com']){
-                            sh 'docker push fmuhammad1824/simple-java:latest'
+                            bat 'docker push fmuhammad1824/simple-java:latest'
                             }
                             }
 }
