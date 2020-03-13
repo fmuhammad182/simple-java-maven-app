@@ -18,5 +18,6 @@ node{
           withDockerRegistry([credentialsID: 'DOCKER_CRED', url: 'fmuhammad1824/simple-java']) {
                sh 'docker push fmuhammad1824/simple-java:latest'
           }
+     }
           
 }
