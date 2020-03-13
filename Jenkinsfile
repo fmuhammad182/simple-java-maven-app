@@ -1,27 +1,12 @@
-  pipeline {
-  agent none
-  stages {
-    stage('Maven Install') {
-      agent {
-        docker {
-          image 'maven:3.5.0'
-        }
-      }
-      steps {
-        sh 'mvn clean install'
-      }
+node{
+     
+    stage('SCM Checkout'){
+        git credentialsId: 'GIT_CREDENTIALS', url:  'https://github.com/fmuhammad182/simple-java-maven-app.git',branch: 'master'
     }
-    stage('Docker Build') {
-      agent any
-      steps {
-        sh 'docker build -t fmuhammad1824/simple-java:latest .'
-      }
-    }
-  }
-}       
-         
-
-
-                   
-        
- 
+    
+    stage(" Maven Clean Package"){
+      def mavenHome =  tool name: "Maven-3.6.1", type: "maven"
+      def mavenCMD = "${mavenHome}/bin/mvn"
+      sh "${mavenCMD} clean package"
+      
+    } 
