@@ -17,6 +17,11 @@ node{
      stage('Build Docker Image'){
         dockerImage= sh 'docker build -t fmuhammad1824/simple-java .'
     }
+    
+    stage('Publish'){
+        withDockerRegistry([ credentialsId: DOCKER_CRED', url:'https://registry.hub.docker.com']){
+                            sh 'docker push fmuhammad1824/simple-java:latest'
+                            }
     /*stage('Deploy Image') {
   steps{    script {
       docker.withRegistry( '', registryCredential ) {
