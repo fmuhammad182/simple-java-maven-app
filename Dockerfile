@@ -20,7 +20,7 @@ ARG JAR_LIB_FILE=target/
 
 # cd /usr/local/runme
 WORKDIR /usr/local/runme
-
+EXPOSE 5000
 # copy target/find-links.jar /usr/local/runme/app.jar
 COPY ${JAR_FILE} my-app-1.0-SNAPSHOT.jar
 
