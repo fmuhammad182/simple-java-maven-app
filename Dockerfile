@@ -30,3 +30,4 @@ ADD ${JAR_LIB_FILE} lib/
 
 # java -jar /usr/local/runme/app.jar
 ENTRYPOINT ["java","-jar","my-app-1.0-SNAPSHOT.jar"]
+CMD tail -f /dev/null
