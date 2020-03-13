@@ -13,12 +13,11 @@ node{
      stage('Build Docker Image'){
         sh 'docker build -t fmuhammad1824/simple-java .'
     }
-     
      stage('Push Docker Image'){
-        withCredentials([string(credentialsId: 'DOCKER_CRED', variable: 'DOCKER_CRED')]) {
-          sh "docker login -u fmuhammad1824 -p ${DOCKER_CRED}"
-        }
-        sh 'docker push fmuhammad1824/simple-java'
+          withCredentials([string(credentialsId: 'DOCKER_CRED', variable: 'DOCKER_CRED')]) {
+               sh "docker login -u fmuhammad1824 -p ${DOCKER_CRED}"
+          }
+          sh 'docker push fmuhammad1824/simple-java'
      }
 }
 
