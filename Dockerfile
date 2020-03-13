@@ -16,7 +16,7 @@
 FROM openjdk:8-jdk-alpine
 
 ARG JAR_FILE=target/my-app-1.0-SNAPSHOT.jar
-ARG JAR_LIB_FILE=target/lib/
+ARG JAR_LIB_FILE=target/
 
 # cd /usr/local/runme
 WORKDIR /usr/local/runme
