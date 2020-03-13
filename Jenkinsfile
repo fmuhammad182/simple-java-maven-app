@@ -20,6 +20,7 @@ node{
                             sh 'docker push fmuhammad1824/simple-java:latest'
                             }
                             }
+}
                             
                        
                             
