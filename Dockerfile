@@ -1,5 +1,5 @@
 FROM openjdk:8-alpine
-
+EXPOSE 5000
 # Required for starting application up.
 RUN apk update && apk add /bin/sh
 
