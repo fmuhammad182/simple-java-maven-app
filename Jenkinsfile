@@ -1,8 +1,5 @@
 node{
-    /*environment {
-    registry = "fmuhammad1824/simple-java"
-    registryCredential = ‘DOCKER_CRED’
-}*/
+    
      
     stage('SCM Checkout'){
         git credentialsId: 'GIT_CREDENTIALS', url:  'https://github.com/fmuhammad182/simple-java-maven-app.git',branch: 'master'
@@ -22,16 +19,15 @@ node{
         withDockerRegistry([ credentialsId: DOCKER_CRED', url:'https://registry.hub.docker.com']){
                             sh 'docker push fmuhammad1824/simple-java:latest'
                             }
-    /*stage('Deploy Image') {
-  steps{    script {
-      docker.withRegistry( '', registryCredential ) {
-        dockerImage.push()
-      }
-    }
-  }
-}*/
+                            }
+                            
+                       
+                            
+                            
+                            
+ 
      
-}
+
 
           
 
