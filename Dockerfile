@@ -14,6 +14,7 @@
  
 #CMD ["java", "-Dspring.data.mongodb.uri=mongodb://mongo:27017/spring-mongo","-Djava.security.egd=file:/dev/./urandom","-jar",
 FROM openjdk:8-jdk-alpine
+FROM ubuntu:18.04
 
 ARG JAR_FILE=target/my-app-1.0-SNAPSHOT.jar
 ARG JAR_LIB_FILE=target/
