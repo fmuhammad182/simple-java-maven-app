@@ -1,15 +1,22 @@
-node{
-     
-    stage('SCM Checkout'){
-        git credentialsId: 'GIT_CREDENTIALS', url:  'https://github.com/fmuhammad182/simple-java-maven-app.git',branch: 'master'
-    }
+pipeline{
+     agent any
+     stages{
+         stage('SCM Checkout'){
+              steps{
+                   git credentialsId: 'GIT_CREDENTIALS', url:  'https://github.com/fmuhammad182/simple-java-maven-app.git',branch: 'master'
+                   
+              }
+         }
+                   
+        
     
-    stage("Maven Build"){
-   
-              sh "mvn clean package"
-              sh "mv target/*.jar target/myweb.jar"
-         
-    }   
-}
-    
+          stages {
+               stage('Compile Stage'){
+                    steps{
+                         withMaven(maven : 'maven-3.6.1') {
+                              sh 'mvn clean compile'
+                         }
+                    }
+               }
+ 
     
