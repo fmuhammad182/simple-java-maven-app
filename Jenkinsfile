@@ -17,7 +17,7 @@ node{
     
     stage('Publish'){
         withDockerRegistry([ credentialsId: 'DOCKER_CRED', url:'https://registry.hub.docker.com']){
-            /*sh "docker login -u fmuhammad1824 -p ${DOKCER_HUB_PASSWORD}"*/
+            sh 'docker login -u fmuhammad1824 -p techugo@1123'
             sh 'docker push fmuhammad1824/simple-java'
         }
     }
