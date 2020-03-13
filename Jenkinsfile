@@ -13,4 +13,10 @@ node{
      stage('Build Docker Image'){
         sh 'docker build -t fmuhammad1824/simple-java .'
     }
+     
+     stage('Publish to DockerHub'){
+          withDockerRegistry([credentialsID: 'DOCKER_CRED', url: 'fmuhammad1824/simple-java']) {
+               sh 'docker push fmuhammad1824/simple-java:latest'
+          }
+          
 }
